@@ -10,40 +10,28 @@ import com.prakash.algo.fwk.util.Utilities;
 import com.prakash.algo.tmp.Test;
 
 
+/* Add your methods here that you would like to be displayed on the Index page. The method should follow the below convention
+ * 1. The method should be public
+ * 2. The method should not take any argurments
+ * 3. The method should return Object of Type VisualTreeRenderer 
+ *  
+ */
 
 public class Index {
 
+	
+	/* 
+	 * This is a sample function which generates a binary tree
+	 */
 	public  VisualTreeRenderer doBinaryTree() {
 		
-		System.out.println("in doBinary Tree");
+		System.out.println("Sample function");
 		
 		Test objTest = new Test();
 		return objTest.testMethod();
 		
 		
 	}
-	
-	
-	public ResponseBean doInorderTraversal() {
-		System.out.println("in doInorderTraversal");
-		return new ResponseBean();
-	}
-
-	public ResponseBean showBinaryTree() {
-		System.out.println("in showBinaryTree");
-		
-		return new ResponseBean();
-	}
-
-	
-	public ResponseBean doHeap() {
-		System.out.println("in doHeap");
-		
-		return new ResponseBean();
-	}
-	
-	
-	
 	
 	
 

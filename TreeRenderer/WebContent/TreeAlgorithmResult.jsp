@@ -42,16 +42,8 @@ var addText = function (x,y,text) {
 }
 
 var displayNode = function (jsonObject,curHeight,isLeft,parentLocMulti) {
-	/*console.log("current Height"+ curHeight);
-	console.log(" value "+ jsonObject.value);
-	console.log(" is Left Object"+isLeft);
-	*/
 	
-	console.log("x"+(canvas.width*parentLocMulti));
-	console.log("y"+(curHeight*heightDef));
-	console.log(" value "+ jsonObject.value);
-	
-	
+		
 	drawCircle(canvas.width*parentLocMulti,curHeight*heightDef);
 	addText(canvas.width*parentLocMulti,curHeight*heightDef,jsonObject.value);
 	if (curHeight >1) {
@@ -69,7 +61,7 @@ var displayNode = function (jsonObject,curHeight,isLeft,parentLocMulti) {
 		displayNode(jsonObject.leftNode,curHeight+1,true,parentLocMulti-(1/(Math.pow(2,curHeight+1))));
 	}
 	if (jsonObject.rightNode !=null) {
-		//console.log("-->"+(parentLocMulti+(parentLocMulti*.5)));
+
 		displayNode(jsonObject.rightNode,curHeight+1,false,parentLocMulti+(1/(Math.pow(2,curHeight+1))));
 		
 	}
@@ -90,9 +82,6 @@ $(document).ready(function () {
              type : 'GET',
              success : function(data) {
 
-               //alert (data);
-              // jsonObject= JSON.parse(data);
-              //alert(data.size());
               for (var i=0;i<data.length;i++) {
             	  
             	  $("#result").append("<br><br><h2>"+data[i].title + " </h2><br><canvas id='canvas"+i+"' width='200' height='100' style='border:1px solid #000000;'></canvas>");

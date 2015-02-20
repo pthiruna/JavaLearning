@@ -19,8 +19,7 @@ for (Method method : objClass.getDeclaredMethods()) {
 %>
 <a href="TreeAlgorithmResult.jsp?methodToInvoke=<%=method.getName()%>"> <%=method.getName()%></a> <br>
 <%
-
-    System.out.println(method.getName());
+  
 
 }
 
