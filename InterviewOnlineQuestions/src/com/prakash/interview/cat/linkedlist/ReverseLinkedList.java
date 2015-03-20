@@ -5,6 +5,8 @@ import com.prakash.interview.util.TestDataGenerator;
 import com.prakash.interview.util.Utilities;
 
 public class ReverseLinkedList {
+	
+	public static NodeSL reversedNode = null;
 
 	/**
 	 * @param args
@@ -19,15 +21,17 @@ public class ReverseLinkedList {
 
 	}
 
-	public static void reverseLinkedList(NodeSL node) {
+	public static NodeSL reverseLinkedList(NodeSL node) {
 		
-		
+		reverseLinkedListRecursive(node,null);
+		return reversedNode;
 	}
 	
 	public static void reverseLinkedListRecursive(NodeSL curNode, NodeSL prevNode) {
 		
 		if (curNode==null ) {
 			Utilities.printSingleLinkedList(prevNode, "Output :");
+			reversedNode =prevNode;
 			return;
 		}
 	

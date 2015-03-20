@@ -16,8 +16,15 @@ public class Utilities {
 
 	public static void main(String[] args) {
 		//System.out.println(getRandomNumber(5,10));
-		NodeSL tmpObj = TestDataGenerator.generateSingleLinkedListLooped(10, 3);
-		Utilities.printSingleLinkedListUpto(tmpObj, "output", 15);
+	//	NodeSL tmpObj = TestDataGenerator.generateSingleLinkedListLooped(10, 3);
+		//Utilities.printSingleLinkedListUpto(tmpObj, "output", 15);
+		
+		NodeSL node = TestDataGenerator.generateSingleLinkedList(8);
+		Utilities.printSingleLinkedList(node, "Input");
+		System.out.println(node);
+		NodeSL nodeCopy = Utilities.copySingleLinkedlist(node);
+		Utilities.printSingleLinkedList(nodeCopy, "Output");
+		System.out.println(nodeCopy);
 		
 		
 	}
@@ -42,5 +49,46 @@ public class Utilities {
 			i++;
 		}
 		System.out.println("");
+	}
+	
+	public static NodeSL getLastNode(NodeSL node) {
+		if (node== null) {
+			return null;
+		}
+		while(node.getNodeSL()!= null) {
+			node = node.getNodeSL();
+		}
+		return node;
+	}
+	
+	public static NodeSL copySingleLinkedlist(NodeSL node) {
+		NodeSL nodeCopy =null;
+		boolean isRootNode = true;
+		NodeSL prevNewNode = null;
+		NodeSL curOldNode = null;
+		
+		
+		
+		do {
+			
+			NodeSL newNode= new NodeSL();
+			newNode.setValue(node.getValue());
+		
+			if (isRootNode){
+				isRootNode = false;
+				nodeCopy = newNode;
+			}else {
+				prevNewNode.setNodeSL(newNode);
+			}
+			prevNewNode=newNode;
+			
+			node= node.getNodeSL();
+			
+			
+		}while(node!=null);
+		
+		return nodeCopy;
+		
+		
 	}
 }
