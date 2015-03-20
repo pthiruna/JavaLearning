@@ -3,6 +3,11 @@ package com.prakash.interview.bean;
 
 public class Node {
 
+	@Override
+	public String toString() {
+		return (leftNode == null ? "" :  leftNode)+"<--(" + value + ")-->" + (RightNode == null ? "":RightNode);
+	}
+
 	private int value;
 	private Node leftNode;
 	private Node RightNode;

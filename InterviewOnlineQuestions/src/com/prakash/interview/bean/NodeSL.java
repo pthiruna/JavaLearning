@@ -2,6 +2,10 @@ package com.prakash.interview.bean;
 
 public class NodeSL {
 	
+	@Override
+	public String toString() {
+		return "(" + value + ")-->" + (nodeSL == null ? "":nodeSL);
+	}
 	private int value;
 	private NodeSL nodeSL =null;
 	
