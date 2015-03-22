@@ -49,7 +49,16 @@ public class LinkedListTryOuts {
 			throw new Exception("Invalid input");
 		}
 		midNode = node;
-		
+		int ticker = 0;
+		while(node != null){
+			
+			if(ticker == 2){
+				midNode = midNode.next();
+				ticker = 0;
+			}
+			ticker++;
+			node = node.next();
+		}
 		
 		
 		return midNode;
