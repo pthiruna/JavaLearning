@@ -22,5 +22,9 @@ public class NodeSL {
 		this.nodeSL = nodeSL;
 	}
 	
+	public NodeSL next(){
+		return nodeSL;
+	}
+	
 
 }
