@@ -43,6 +43,12 @@ public class LinkedListTryOuts {
 		return nthNode;
 	}
 	
+	/**
+	 *  Print the middle of a given linked list
+	 * @param node
+	 * @return
+	 * @throws Exception
+	 */
 	public NodeSL findMidElementOfLinkedList(NodeSL node) throws Exception{
 		NodeSL midNode = null;
 		if(node == null){
@@ -63,5 +69,30 @@ public class LinkedListTryOuts {
 		
 		return midNode;
 	}
-
+	
+	public NodeSL findNthElementFromEndOfLinkedList(NodeSL node, int n) throws Exception{
+		NodeSL midNode = null;
+		if(node == null || n == 0){
+			throw new Exception("Invalid input");
+		}
+		midNode = node;
+		
+		while(node != null){
+			
+			if(n == 0){
+				midNode = midNode.next();
+				
+			}else{
+				n--;
+			}
+			
+			node = node.next();
+		}
+		if(n != 0 || midNode == null){
+			throw new Exception("n is bigger than size of the linked list");
+		}
+		
+		
+		return midNode;
+	}
 }
