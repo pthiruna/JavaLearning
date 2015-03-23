@@ -13,6 +13,7 @@ public class LinkedListTryOuts {
 
 	/**
 	 *  Write a function to get Nth node in a Linked List
+	 *  
 	 * @param linkedList
 	 * @param n
 	 * @return
@@ -45,6 +46,7 @@ public class LinkedListTryOuts {
 	
 	/**
 	 *  Print the middle of a given linked list
+	 *  
 	 * @param node
 	 * @return
 	 * @throws Exception
@@ -72,7 +74,7 @@ public class LinkedListTryOuts {
 	
 	/**
 	 *  Nth node from the end of a Linked List
-
+	 *  
 	 * @param node
 	 * @param n
 	 * @return
@@ -104,6 +106,12 @@ public class LinkedListTryOuts {
 		return midNode;
 	}
 	
+	/**
+	 *  Reverse a linked list
+	 *  
+	 * @param input
+	 * @return
+	 */
 	public NodeSL reverseLinkedList(NodeSL input){
 		
 		NodeSL tempPrevNode = null;
@@ -117,5 +125,37 @@ public class LinkedListTryOuts {
 		}
 		
 		return tempPrevNode;
+	}
+	
+	/**
+	 *  Detect loop in a linked list
+	 * 
+	 * @param input
+	 * @return
+	 */
+	public boolean detectLoopInLinkedList(NodeSL input){
+		NodeSL intersectionPoint = input;
+		int ticker = 0;
+		boolean loopDetected = false;
+		while(input != null){
+			
+				
+				
+			if(ticker == 2){
+				ticker = 0;
+				intersectionPoint = intersectionPoint.next();
+				
+			}
+			ticker ++;
+			input = input.next();
+			if(intersectionPoint == input ){
+				loopDetected = true;
+				break;
+			}
+		}
+		
+		return loopDetected;
+		
+		
 	}
 }
