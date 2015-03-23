@@ -54,8 +54,15 @@ public class TestLinkedLists {
 				 * TestLinkedLists test = new TestLinkedLists();
 				 *  test.testDetectLoopInLinkedList(nodeLooped);
 				 */
-				 
 
+
+		// *******************************testReverseLinkedList*********************************//
+				 NodeSL node = TestDataGenerator.generateSingleLinkedList(20);
+				 System.out.println(node); 
+				 TestLinkedLists test = new TestLinkedLists();
+				 test.testRecursivePrintLinkedList(node);
+				 
+				
 	}
 
 	public void testDetectLoopInLinkedList(NodeSL node) {
@@ -99,6 +106,26 @@ public class TestLinkedLists {
 
 			NodeSL outputNode = llTryOuts.reverseLinkedList(null);
 			System.out.println(outputNode);
+		} catch (Exception exp) {
+			exp.printStackTrace();
+		}
+	}
+	
+	
+	public void testRecursivePrintLinkedList(NodeSL node) {
+		LinkedListTryOuts llTryOuts = new LinkedListTryOuts();
+		try {
+
+			 llTryOuts.recursivePrintNode(node);;
+			
+		} catch (Exception exp) {
+			exp.printStackTrace();
+		}
+
+		try {
+
+			llTryOuts.reverseLinkedList(null);
+			
 		} catch (Exception exp) {
 			exp.printStackTrace();
 		}
@@ -215,5 +242,7 @@ public class TestLinkedLists {
 		}
 
 	}
+	
+	
 
 }
