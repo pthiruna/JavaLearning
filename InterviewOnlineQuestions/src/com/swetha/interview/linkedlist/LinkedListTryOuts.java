@@ -70,6 +70,14 @@ public class LinkedListTryOuts {
 		return midNode;
 	}
 	
+	/**
+	 *  Nth node from the end of a Linked List
+
+	 * @param node
+	 * @param n
+	 * @return
+	 * @throws Exception
+	 */
 	public NodeSL findNthElementFromEndOfLinkedList(NodeSL node, int n) throws Exception{
 		NodeSL midNode = null;
 		if(node == null || n == 0){
@@ -94,5 +102,20 @@ public class LinkedListTryOuts {
 		
 		
 		return midNode;
+	}
+	
+	public NodeSL reverseLinkedList(NodeSL input){
+		
+		NodeSL tempPrevNode = null;
+		NodeSL tempNextNode = null;
+		while(input != null){
+			tempNextNode = input.next();
+			input.setNodeSL(tempPrevNode);
+			tempPrevNode = input;
+			input = tempNextNode;
+			
+		}
+		
+		return tempPrevNode;
 	}
 }

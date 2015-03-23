@@ -24,11 +24,35 @@ public class Test {
 		 * test.testMidNodeNodeInLinkedList(nodeOdd);
 		 */
 
+		/*NodeSL node = TestDataGenerator.generateSingleLinkedList(20);
+		System.out.println(node);
+		Test test = new Test();
+		test.testNthNodeFromEndInLinkedList(node);*/
+		
 		NodeSL node = TestDataGenerator.generateSingleLinkedList(20);
 		System.out.println(node);
 		Test test = new Test();
-		test.testNthNodeFromEndInLinkedList(node);
+		test.testReverseLinkedList(node);
 
+	}
+	
+	public void testReverseLinkedList(NodeSL node) {
+		LinkedListTryOuts llTryOuts = new LinkedListTryOuts();
+		try {
+
+			NodeSL outputNode = llTryOuts.reverseLinkedList(node);
+			System.out.println(outputNode);
+		} catch (Exception exp) {
+			exp.printStackTrace();
+		}
+
+		try {
+
+			NodeSL outputNode = llTryOuts.reverseLinkedList(null);
+			System.out.println(outputNode);
+		} catch (Exception exp) {
+			exp.printStackTrace();
+		}
 	}
 
 	public void testNthNodeFromEndInLinkedList(NodeSL node) {
