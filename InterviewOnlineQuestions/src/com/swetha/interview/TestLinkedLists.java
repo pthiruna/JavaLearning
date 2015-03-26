@@ -65,7 +65,7 @@ public class TestLinkedLists {
 		// *******************************testMoveLastToFirstLinkedList*********************************//
 		TestLinkedLists test = new TestLinkedLists();
 		
-		 NodeSL node1 = TestDataGenerator.generateSingleLinkedList(20);
+		 NodeSL node1 = TestDataGenerator.generateSingleLinkedList(2);
 		 System.out.println(node1); 
 		 test.testMoveLastToFirstLinkedList(node1);
 		 
