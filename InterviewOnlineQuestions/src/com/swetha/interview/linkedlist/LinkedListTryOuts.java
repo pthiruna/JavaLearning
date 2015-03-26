@@ -166,4 +166,32 @@ public class LinkedListTryOuts {
 		
 
 	}
+	
+	public boolean checkPalindrome(NodeSL node){
+		boolean isPalindrome = false;
+		NodeSL reversedLinkedList = reverseLinkedList(node); 
+		
+		return isPalindrome;
+	}
+	
+	public NodeSL moveLastToFirst(NodeSL input) throws Exception{
+		NodeSL output = input;
+		if(input != null){
+		while(input.next() != null ){
+			if(input.next().next() != null){
+				input = input.next();
+			}else{
+				NodeSL lastNode = input.next();
+				lastNode.setNodeSL(output);
+				input.setNodeSL(null);
+				output = lastNode;
+			}
+		
+		}
+		}else{
+			throw new Exception ("Invalid input");
+		}
+		return output;
+	}
+	
 }
