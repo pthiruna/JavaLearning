@@ -63,7 +63,7 @@ public class TestLinkedLists {
 				 test.testRecursivePrintLinkedList(node);*/
 				 
 		// *******************************testMoveLastToFirstLinkedList*********************************//
-		TestLinkedLists test = new TestLinkedLists();
+		/*TestLinkedLists test = new TestLinkedLists();
 		
 		 NodeSL node1 = TestDataGenerator.generateSingleLinkedList(2);
 		 System.out.println(node1); 
@@ -74,10 +74,38 @@ public class TestLinkedLists {
 		  test.testMoveLastToFirstLinkedList(node2);
 		  
 
-			  test.testMoveLastToFirstLinkedList(null);
+			  test.testMoveLastToFirstLinkedList(null);*/
+		
+		// *******************************testDeleteAlternateNodesInLinkedList*********************************//
+		TestLinkedLists test = new TestLinkedLists();
+		
+		 NodeSL node1 = TestDataGenerator.generateSingleLinkedList(10);
+		 System.out.println(node1); 
+		 test.testDeleteAlternateNodesInLinkedList(node1);
+		 
+		 NodeSL node3 = TestDataGenerator.generateSingleLinkedList(3);
+		 System.out.println(node3); 
+		  test.testDeleteAlternateNodesInLinkedList(node3);
+		 
+		 NodeSL node2 = TestDataGenerator.generateSingleLinkedList(1);
+		 System.out.println(node2); 
+		  test.testDeleteAlternateNodesInLinkedList(node2);
 				
 	}
 	
+	public void testDeleteAlternateNodesInLinkedList(NodeSL node) {
+		LinkedListTryOuts llTryOuts = new LinkedListTryOuts();
+		try {
+
+			NodeSL outputNode = llTryOuts.deleteAlternateNodes(node);
+			System.out.println(outputNode);
+		} catch (Exception exp) {
+			exp.printStackTrace();
+		}
+
+		
+	}
+
 	
 	
 	public void testMoveLastToFirstLinkedList(NodeSL node) {

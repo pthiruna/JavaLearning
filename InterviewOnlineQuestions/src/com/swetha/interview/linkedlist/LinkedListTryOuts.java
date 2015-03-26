@@ -174,6 +174,13 @@ public class LinkedListTryOuts {
 		return isPalindrome;
 	}
 	
+	/**
+	 *  Move last element to front of a given Linked List
+	 *  
+	 * @param input
+	 * @return
+	 * @throws Exception
+	 */
 	public NodeSL moveLastToFirst(NodeSL input) throws Exception{
 		NodeSL output = input;
 		if(input != null){
@@ -191,6 +198,29 @@ public class LinkedListTryOuts {
 		}else{
 			throw new Exception ("Invalid input");
 		}
+		return output;
+	}
+	
+	/**
+	 *  Delete alternate nodes of a Linked List
+	 * 
+	 * @param input
+	 * @return
+	 * @throws Exception
+	 */
+	public NodeSL deleteAlternateNodes(NodeSL input) throws Exception{
+		NodeSL output = input;
+		
+			
+			while(input != null && input.next() != null){
+				
+				input.setNodeSL(input.next().next());
+				
+				input = input.next();
+				
+			}
+			
+		
 		return output;
 	}
 	
